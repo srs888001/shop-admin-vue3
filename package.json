@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix"
+    "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "eslint": "^8.0.1",
@@ -21,8 +22,15 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.1.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
     "vue-tsc": "^0.34.7"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "npm run lint"
+    ]
   }
 }
