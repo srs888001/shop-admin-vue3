@@ -12,7 +12,12 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     // 跳过第三方包类型检查
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    // 别名路径定义
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
