@@ -26,5 +26,13 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
-  }
+  },
+  overrides: [
+    {
+      files: ['src/api/**/*.ts'],
+      rules: {
+        camelcase: 'off'
+      }
+    }
+  ]
 }
