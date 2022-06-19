@@ -1,5 +1,7 @@
 module.exports = {
   globals: {
+    // setup里面定义属、事件等
+    // 告诉eslint是全局api，不需要单独引入
     defineProps: 'readonly',
     defineEmits: 'readonly',
     defineExpose: 'readonly',

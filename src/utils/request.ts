@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
 
 const request = axios.create({
-  baseURL: 'https://shop.fed.lagounews.com/api/admin' // 基础路径
+  baseURL: import.meta.env.VITE_API_BASEURL// 基础路径
 })
 
 // 1.request默认不支持泛型

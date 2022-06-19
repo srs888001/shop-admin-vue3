@@ -15,6 +15,7 @@
     "skipLibCheck": true,
     // 别名路径定义
     "baseUrl": ".",
+    "types": ["vite/client"],
     "paths": {
       "@/*": ["src/*"]
     },
