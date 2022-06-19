@@ -8,6 +8,8 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
+    // 因为 esbuild 只执行没有类型信息的转译，它并不支持某些特性，如 const enum 和隐式类型导入。
+    // 下面设置，会让 TS 警告你不要使用隔离（isolated）转译的功能。
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
