@@ -43,4 +43,30 @@ export default defineConfig({
       }
     }
   }
+  // server: {
+  //   proxy: {
+  //     // 字符串简写写法
+  //     // /foo/123 => http://localhost:4567/foo/123
+  //     // '/foo': 'http://localhost:4567/foo',
+  //     // 选项写法
+  //     '/admin': {
+  //       // /admin/login => https://shop.fed.lagounews.com/api/admin/login
+  //       target: 'https://shop.fed.lagounews.com/api', // 代理的目标地址
+  //       // 兼容基于名字的虚拟主机
+  //       // a.com localhost:xxx
+  //       // b.com localhost:xxx
+  //       // HTTP 请求头部的 origin 字段
+  //       // 我们在开发模式：默认的 origin 是真实的 origin：localhost:3000
+  //       // changeOrigin: true，代理服务会把 origin 修改为目标地址 http://jsonplaceholder.typicode.com
+  //       changeOrigin: true
+
+  //       // 路径重写
+  //       // http://jsonplaceholder.typicode.com/api/xxx
+  //       //    /api/xxx => http://jsonplaceholder.typicode.com/api/xxx
+  //       // http://jsonplaceholder.typicode.com/xxx
+  //       //    /api/xxx => http://jsonplaceholder.typicode.com/api/xxx
+  //       // rewrite: (path) => path.replace(/^\/api/, '')
+  //     }
+  //   }
+  // }
 })

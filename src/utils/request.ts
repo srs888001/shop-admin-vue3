@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
 
 const request = axios.create({
+  // 如果本地测试CROS，这边baseURL就不需要设置了
   baseURL: import.meta.env.VITE_API_BASEURL// 基础路径
 })
 
