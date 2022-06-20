@@ -1,13 +1,11 @@
 <template>
   <el-container>
     <el-aside width="200px">
-      AppMenu
-      <!-- <AppMenu /> -->
+      <AppMenu />
     </el-aside>
     <el-container>
       <el-header>
-        AppHeader
-        <!-- <AppHeader /> -->
+        <AppHeader />
       </el-header>
       <el-main>
         <router-view />
@@ -17,8 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-// import AppMenu from './AppMenu/index.vue'
-// import AppHeader from './AppHeader/index.vue'
+import AppMenu from './AppMenu/index.vue'
+import AppHeader from './AppHeader/index.vue'
 
 </script>
 
@@ -36,7 +34,6 @@
 }
 
 .el-aside {
-  // width: auto;
   background-color: #304156;
   color: #333;
 }

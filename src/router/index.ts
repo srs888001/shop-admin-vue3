@@ -1,5 +1,9 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import AppLayout from '@/layout/AppLayout.vue'
+import productRoutes from './modules/product'
+import orderRoutes from './modules/order'
+import permissionRoutes from './modules/permission'
+import mediaRoutes from './modules/media'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -9,14 +13,18 @@ const routes: RouteRecordRaw[] = [
       {
         path: '', // 默认子路由
         name: 'home',
-        component: () => import('../views/home/homeIndex.vue')
-      }
+        component: () => import('../views/home/index.vue')
+      },
+      productRoutes,
+      orderRoutes,
+      permissionRoutes,
+      mediaRoutes
     ]
   },
   {
     path: '/admin/login',
     name: 'login',
-    component: () => import('../views/login/loginIndex.vue')
+    component: () => import('../views/login/index.vue')
   }
 ]
 

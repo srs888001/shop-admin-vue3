@@ -3,11 +3,16 @@ import App from './App.vue'
 import router from './router/index'
 import { store, key } from './store'
 import elementPlus from './plugins/element-plus'
+// eslint-disable-next-line no-unused-vars
+// import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 // 加载全局样式
 import './styles/index.scss'
 
 const app = createApp(App)
+// for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+//   app.component(key, component)
+// }
 
 app.use(router)
 app.use(store, key)
