@@ -1,5 +1,4 @@
 <template>
-  <h1>sdafs</h1>
   <i
     :class="collapseIcon"
     @click="handleCollapse"
