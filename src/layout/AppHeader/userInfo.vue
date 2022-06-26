@@ -1,8 +1,9 @@
 <template>
   <el-dropdown>
-    <span class="el-dropdown-link">
+    <span>
       <!-- {{ $store.state.user?.account }} -->
-      <i class="el-icon-arrow-down el-icon--right" />
+      个人信息
+      <el-icon><ArrowDown /></el-icon>
     </span>
     <template #dropdown>
       <el-dropdown-menu>

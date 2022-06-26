@@ -1,5 +1,7 @@
 <template>
-  <i class="el-icon-bell" />
+  <el-icon>
+    <Bell />
+  </el-icon>
 </template>
 
 <script lang="ts" setup></script>

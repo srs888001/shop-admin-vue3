@@ -1,8 +1,7 @@
 <template>
-  <i
-    class="el-icon-full-screen"
-    @click="toggleFullScreen"
-  />
+  <el-icon @click="toggleFullScreen">
+    <FullScreen />
+  </el-icon>
 </template>
 
 <script lang="ts" setup>
