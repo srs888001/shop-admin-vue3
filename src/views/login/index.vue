@@ -49,7 +49,8 @@
           <img
             class="imgcode"
             alt="验证码"
-            src="https://shop.fed.lagounews.com/api/admin/captcha_pro"
+            :src="captchaSrc"
+            @click="loadCaptcha"
           >
         </div>
       </el-form-item>
@@ -68,7 +69,23 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
+import { getCaptcha, login } from '@/api/common'
+import type { IElForm, IFormRule } from '@/types/element-plus'
+import router from '@/router'
+import { store } from '@/store'
+
+const captchaSrc = ref('')
+const form = ref<IElForm | null>(null)
+
+onMounted(() => {
+  loadCaptcha()
+})
+
+const loadCaptcha = async () => {
+  const data = await getCaptcha()
+  captchaSrc.value = URL.createObjectURL(data)
+}
 
 const user = reactive({
   account: 'admin',
@@ -76,7 +93,7 @@ const user = reactive({
   imgcode: ''
 })
 const loading = ref(false)
-const rules = ref({
+const rules = ref<IFormRule>({
   account: [
     { required: true, message: '请输入账号', trigger: 'change' }
   ],
@@ -89,7 +106,34 @@ const rules = ref({
 })
 
 const handleSubmit = async () => {
-  console.log('handleSubmit')
+  // 表单验证
+  const valid = await form.value?.validate()
+  if (!valid) {
+    // 因为eslint，需要添加false
+    return false
+  }
+
+  // 验证通过，展示 loading
+  loading.value = true
+
+  // 请求提交
+  const data = await login(user).catch(() => {
+    loadCaptcha() // 刷新验证码
+  }).finally(() => {
+    loading.value = false
+  })
+
+  if (!data) return false
+
+  // 存储登录用户信息
+  store.commit('setUser', {
+    ...data.user_info,
+    token: data.token
+  })
+
+  router.replace({
+    name: 'home'
+  })
 }
 
 </script>
