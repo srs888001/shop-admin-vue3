@@ -72,8 +72,12 @@
 import { onMounted, reactive, ref } from 'vue'
 import { getCaptcha, login } from '@/api/common'
 import type { IElForm, IFormRule } from '@/types/element-plus'
-import router from '@/router'
+// import router from '@/router'
+import { useRouter, useRoute } from 'vue-router'
 import { store } from '@/store'
+
+const router = useRouter()
+const route = useRoute()
 
 const captchaSrc = ref('')
 const form = ref<IElForm | null>(null)
@@ -131,9 +135,16 @@ const handleSubmit = async () => {
     token: data.token
   })
 
-  router.replace({
-    name: 'home'
-  })
+  // 跳转回原来页面
+  let redirect = route.query.redirect
+  if (typeof redirect !== 'string') {
+    redirect = '/'
+  }
+  router.replace(redirect)
+
+  // router.replace({
+  //   name: 'home'
+  // })
 }
 
 </script>
