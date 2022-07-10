@@ -17,4 +17,10 @@ app.use(router)
 app.use(store, key)
 app.use(elementPlus)
 
+// 自动注册全局组件
+const modules = import.meta.globEager('./components/**/index.ts')
+for (const path in modules) {
+  app.use(modules[path].default)
+}
+
 app.mount('#app')
