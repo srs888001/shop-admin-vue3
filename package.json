@@ -19,7 +19,9 @@
     "vue": "^3.2.25",
     "vue-meta": "^3.0.0-alpha.2",
     "vue-router": "4",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "vxe-table": "^4.2.3",
+    "xe-utils": "^3.5.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
