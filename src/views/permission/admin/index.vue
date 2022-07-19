@@ -137,7 +137,7 @@
         </el-table-column>
       </el-table>
 
-      <AppPagination
+      <app-pagination
         v-model:page="listParams.page"
         v-model:limit="listParams.limit"
         :total="listCount"
@@ -166,7 +166,7 @@ import { ref, reactive, onMounted } from 'vue'
 import { getAdmins, deleteAdmin, updateAdminStatus } from '@/api/admin'
 import type { IListParams, Admin } from '@/api/types/admin'
 import { ElMessage } from 'element-plus'
-// import AdminForm from './AdminForm.vue'
+import AdminForm from './AdminForm.vue'
 
 const list = ref<Admin[]>([]) // 列表数据
 const listCount = ref(0)
